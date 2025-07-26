@@ -1,0 +1,1 @@
+The user needs to copy and paste the two files named "best.pt" & "yolov8s.pt" to this folder weights. Remember just "COPY & PASTE", don't "CUT & PASTE".
