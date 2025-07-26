@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection Web App</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+        text-align: center; /* Aligning the text to the center */
+        padding: 20px 0; /* Adding padding to the top and bottom */
+        font-size: 24px; /* Increasing font size for better visibility */
+        font-weight:bold;
+        }
+
+        .sidebar {
+            width: 126px;
+            background-color: #000;
+            color: #fff;
+            padding: 40px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 19px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            background-color: #333;
+        }
+
+        .header {
+            text-align: -moz-center;
+            padding: 0px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .main {
+            margin-left: 220px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .pane {
+            flex: 1 1 45%;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 15px;
+            background-color: #fff;
+        }
+
+        .pane-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .button-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        #file-upload {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 0px;
+            font-size: 15px;
+            background-color: #000;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <a href="https://docs.roboflow.com/">RoboFlow</a>
+        <a href="https://universe.roboflow.com/">RoboFlow Universe</a>
+        <a href="https://docs.ultralytics.com/">Ultralytics</a>
+    </div>
+
+    <header class="header">
+        <h1>Leftover Food Detection Using YOLOv8</h1>
+    </header>
+
+    <main class="main">
+        <!-- First Pane -->
+        <form class="form-signin" method="post" enctype="multipart/form-data" name="form1">
+            <div class="pane">
+                <h2 class="pane-heading">YOLOv8 Food Leftover Detection</h2>
+                <div class="button-section">
+                    <h3>Choose Only Image file</h3>
+                    <input type="file" name="file" id="inputfile" accept="image/*, video/*">
+                    <p class="description">(Only .jpg, .png, .jpeg formats)</p>
+                    <button id="upload-button" type="submit">Upload File</button>
+                </div>
+            </div>
+        </form>
+        
+
+        <!-- Second Pane -->
+        <div class="pane">
+            <h2 class="pane-heading">YOLOv8 Food Leftover Detection Results</h2>
+            <div id="results">
+                <!-- Results will be displayed here -->
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </div>
+</body>
+</html>
